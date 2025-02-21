@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .card {
+            width: 180px;
+            border: 3px solid transparent;
+            border-radius: 10px;
+            padding: 10px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card:hover {
+            transform: scale(1.1);
+        }
+        .selected {
+            border: 3px solid blue;
+        }
+        .character-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Select a Character</h1>
+    <div class="container">
+        <div class="card" onclick="selectCharacter(this)">
+            <img src="https://via.placeholder.com/150" alt="Lumine">
+            <p class="character-name">Lumine</p>
+        </div>
+        <div class="card" onclick="selectCharacter(this)">
+            <img src="https://via.placeholder.com/150" alt="Ganyu">
+            <p class="character-name">Ganyu</p>
+        </div>
+        <div class="card" onclick="selectCharacter(this)">
+            <img src="https://via.placeholder.com/150" alt="Keqing">
+            <p class="character-name">Keqing</p>
+        </div>
+        <div class="card" onclick="selectCharacter(this)">
+            <img src="https://via.placeholder.com/150" alt="Rosaria">
+            <p class="character-name">Rosaria</p>
+        </div>
+    </div>
+
+    <script>
+        function selectCharacter(card) {
+            // Remove 'selected' class from all cards
+            document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+            // Add 'selected' class to the clicked card
+            card.classList.add('selected');
+        }
+    </script>
+
+</body>
+</html>
